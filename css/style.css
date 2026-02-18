@@ -346,4 +346,10 @@ body {
   margin: auto;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .section {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
 
