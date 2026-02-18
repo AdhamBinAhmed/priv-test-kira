@@ -356,3 +356,35 @@ body {
   }
 }
 
+.cart-icon {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+}
+
+#cart-count {
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.cart-box {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  width: 300px;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+
