@@ -19,13 +19,6 @@ body {
   display: none;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  background: #111;
-}
 
 header img {
   height: 50px;
