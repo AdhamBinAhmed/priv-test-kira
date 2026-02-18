@@ -8,24 +8,36 @@
 </head>
 <body>
 
-<header>
+<header class="main-header">
+
+  <!-- اللوجو -->
   <div class="logo">
     <img src="images/logo.png" alt="Logo">
   </div>
-  <nav>
+
+  <!-- زرار المينيو -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- القائمة -->
+  <nav id="menu">
     <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
-    <a href="products.html" class="active">منتجاتنا</a>
+    <a href="products.html">منتجاتنا</a>
     <a href="gallery.html">أعمالنا</a>
     <a href="contact.html">تواصل معنا</a>
-    <button id="themeToggle" class="theme-btn">🌙</button>
-    <div class="cart-icon" onclick="toggleCart()">
-  🛒 <span id="cart-count">0</span>
-</div>
-
   </nav>
-</header>
 
+  <!-- أدوات -->
+  <div class="header-tools">
+    <button id="themeToggle">🌙</button>
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </div>
+
+</header>
 <section class="section">
 
   <h2 style="text-align:center;">منتجاتنا</h2>
