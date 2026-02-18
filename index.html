@@ -9,23 +9,33 @@
 </head>
 <body>
 
-<header>
+<header class="main-header">
+
+  <!-- اللوجو -->
   <div class="logo">
     <img src="images/logo.png" alt="Logo">
   </div>
+
+  <!-- القائمة -->
   <nav>
-    <a href="index.html" class="active">الرئيسية</a>
+    <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
     <a href="products.html">منتجاتنا</a>
     <a href="gallery.html">أعمالنا</a>
     <a href="contact.html">تواصل معنا</a>
-    <button id="themeToggle" class="theme-btn">🌙</button>
-    <div class="cart-icon" onclick="toggleCart()">
-  🛒 <span id="cart-count">0</span>
-</div>
-
   </nav>
+
+  <!-- أدوات -->
+  <div class="header-tools">
+    <button id="themeToggle">🌙</button>
+
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </div>
+
 </header>
+
 
 
 <section class="hero">
