@@ -228,6 +228,7 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s ease;
+   text-align: center;
 }
 
 .product-card:hover {
@@ -239,6 +240,8 @@ body {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
+   display: block;
+  margin: 0 auto; /* يخلي الصورة في النص */
 }
 
 .product-card h3 {
