@@ -215,8 +215,9 @@ body {
 }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 20px;
+  justify-content: center; /* ده الحل */
 }
 
 
