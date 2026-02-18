@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kira Decorations</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="products.html" class="active">منتجاتنا</a>
+    <a href="gallery.html">أعمالنا</a>
+    <a href="contact.html">تواصل معنا</a>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+  </nav>
+</header>
+
+<section class="section">
+
+  <h2 style="text-align:center;">منتجاتنا</h2>
+
+  <!-- ===== أزرار الأقسام ===== -->
+  <div class="tabs-buttons">
+    <button class="tab-btn active" data-tab="marble">بديل الرخام</button>
+    <button class="tab-btn" data-tab="wood">بديل الخشب</button>
+    <button class="tab-btn" data-tab="chipboard">الشيبورد</button>
+    <button class="tab-btn" data-tab="stone">بديل الحجر</button>
+  </div>
+
+  <!-- ===== محتوى الأقسام ===== -->
+  <div class="tab-content active" id="marble">
+    <div class="products-grid">
+      <div class="product-card">
+        <h3>بديل رخام أبيض</h3>
+        <span class="price">1800 جنيه</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="wood">
+    <div class="products-grid">
+      <div class="product-card">
+        <h3>بديل خشب بني</h3>
+        <span class="price">1500 جنيه</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="chipboard">
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="images/shiboard/202.jpeg" width="120" height="120">
+        <h3>شيبورد مصري كود A202</h3>
+        <span class="price">950 جنيه</span>
+      </div>
+      <div class="product-card">
+        <img src="images/shiboard/208.jpeg" width="120" height="120">
+        <h3>شيبورد مصري كود A208</h3>
+        <span class="price">950 جنيه</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="stone">
+    <div class="products-grid">
+      <div class="product-card">
+        <h3>بديل حجر ديكوري</h3>
+        <span class="price">1700 جنيه</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<script src="js/script.js"></script>
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-item">
+      <span>📞</span>
+      <a href="tel:01552101040">01552101040</a>
+    </div>
+
+    <div class="footer-item">
+      <span>📍</span>
+      <p>العبور - الشباب - اول السبعين - سنتر الباشا  </p>
+    </div>
+  </div>
+
+  <p class="copyright">
+ شركة كيرة للديكور
+  </p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    // نشيل التفعيل من الكل
+    buttons.forEach(btn => btn.classList.remove("active"));
+    contents.forEach(content => content.classList.remove("active"));
+
+    // نفعّل الزرار اللي اتداس عليه
+    button.classList.add("active");
+
+    const target = document.getElementById(button.dataset.tab);
+    target.classList.add("active");
+
+  });
+});
+</script>
+
+
+</body>
+</html>
