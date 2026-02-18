@@ -237,12 +237,14 @@ body {
 
 .product-card img {
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
-  max-width: 250px;
-  height: auto;
+  max-width: 220px;
+  height: 220px;
+  object-fit: cover; /* يخليها مظبوطة */
   border-radius: 10px;
 }
+
 
 .product-card h3 {
   margin: 15px 0 10px;
