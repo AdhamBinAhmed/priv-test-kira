@@ -8,6 +8,10 @@ function scrollToContact() {
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
 
 // Fade Out عند الانتقال
 document.querySelectorAll("a").forEach(link => {
