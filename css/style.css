@@ -236,12 +236,12 @@ body {
 }
 
 .product-card img {
-  width: 90%;
-  height: 300px;
-  object-fit: cover;
+  display: block;
+  margin: 0 auto; 
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   border-radius: 10px;
-   display: block;
-  margin: 0 auto; /* يخلي الصورة في النص */
 }
 
 .product-card h3 {
