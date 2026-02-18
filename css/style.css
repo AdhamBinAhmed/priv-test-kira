@@ -341,7 +341,9 @@ body {
 }
 
 .section {
-  max-width: 2000px;
+  padding: 40px 20px;
+  max-width: 1200px;
   margin: auto;
+  width: 100%;
 }
 
