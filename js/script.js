@@ -69,3 +69,28 @@ accBtns.forEach(btn => {
 
   });
 });
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({name, price});
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+
+  cartItems.innerHTML = "";
+
+  cart.forEach(item => {
+    cartItems.innerHTML += `<p>${item.name} - ${item.price} جنيه</p>`;
+  });
+
+  cartCount.textContent = cart.length;
+}
+
+function toggleCart() {
+  const box = document.getElementById("cartBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
