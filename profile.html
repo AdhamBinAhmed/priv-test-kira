@@ -94,32 +94,17 @@
 <body class="profile-page">
 
 <div class="profile-box">
-  <h2>أكمل بياناتك</h2>
+ <input id="phone">
+<select id="governorate"></select>
+<select id="area"></select>
+<input id="street">
+<input id="building">
 
-  <input type="text" id="phone" placeholder="📞 رقم التليفون">
-
-  <!-- المحافظة -->
-  <select id="governorate">
-    <option value="">اختر المحافظة</option>
-    <option value="cairo">القاهرة</option>
-    <option value="giza">الجيزة</option>
-  </select>
-
-  <!-- المنطقة -->
-  <select id="area">
-    <option value="">اختر المنطقة</option>
-  </select>
-
-  <!-- الشارع -->
-  <input type="text" id="street" placeholder="اسم الشارع">
-
-  <!-- العمارة -->
-  <input type="text" id="building" placeholder="رقم العمارة">
-
-  <button onclick="saveUserData()">حفظ البيانات</button>
+<button onclick="saveUserData()">حفظ</button>
 </div>
 <script type="module" src="js/profile.js"></script>
 </body>
 </html>
+
 
 
