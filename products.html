@@ -29,10 +29,21 @@
     <a href="contact.html">تواصل معنا</a>
   </nav>
 
-  <!-- أدوات -->
-  <div class="header-tools">
-    <button id="themeToggle">🌙</button>
+ <div class="header-tools">
+
+  <!-- زرار الوضع -->
+  <button id="themeToggle">🌙</button>
+
+  <!-- زرار السلة -->
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+
+</div>
+
+<!-- الكارت (خليه بره الهيدر) -->
 <div class="cart-box" id="cartBox">
+
   <h3>سلة المشتريات</h3>
 
   <div id="cart-items"></div>
@@ -42,8 +53,8 @@
   </button>
 
   <div id="cart-details" class="cart-details"></div>
+
 </div>
-  </div>
 
 </header>
 <section class="section">
