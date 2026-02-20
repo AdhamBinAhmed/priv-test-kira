@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'handcraft';
-  src: url('../fonts/TheYearofHandicrafts.ttf') format('truetype');
+  src: url('../fonts/TheyearOfHandCraft.otf') format('opentype');
 }
+
 body {
   font-family: 'handcraft', sans-serif;
   margin: 0;
