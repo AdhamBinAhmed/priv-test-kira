@@ -91,20 +91,47 @@
 </style>
   
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>أكمل بياناتك</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body class="profile-page">
 
 <div class="profile-box">
- <input id="phone">
-<select id="governorate"></select>
-<select id="area"></select>
-<input id="street">
-<input id="building">
 
-<button onclick="saveUserData()">حفظ</button>
+  <h2>أكمل بياناتك</h2>
+
+  <input id="phone" placeholder="📞 رقم التليفون">
+
+  <!-- المحافظة -->
+  <select id="governorate">
+    <option value="">اختر المحافظة</option>
+    <option value="cairo">القاهرة</option>
+    <option value="giza">الجيزة</option>
+  </select>
+
+  <!-- المنطقة -->
+  <select id="area">
+    <option value="">اختر المنطقة</option>
+  </select>
+
+  <input id="street" placeholder="اسم الشارع">
+  <input id="building" placeholder="رقم العمارة">
+
+  <button onclick="saveUserData()">حفظ البيانات</button>
+
 </div>
+
 <script type="module" src="js/profile.js"></script>
+
 </body>
 </html>
+</html>
+
 
 
 
