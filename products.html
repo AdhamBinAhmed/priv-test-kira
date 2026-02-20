@@ -32,9 +32,17 @@
   <!-- أدوات -->
   <div class="header-tools">
     <button id="themeToggle">🌙</button>
-    <div class="cart-icon" onclick="toggleCart()">
-      🛒 <span id="cart-count">0</span>
-    </div>
+<div class="cart-box" id="cartBox">
+  <h3>سلة المشتريات</h3>
+
+  <div id="cart-items"></div>
+
+  <button onclick="toggleDetails()" class="btn">
+    تفاصيل
+  </button>
+
+  <div id="cart-details" class="cart-details"></div>
+</div>
   </div>
 
 </header>
