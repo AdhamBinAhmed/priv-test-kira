@@ -416,4 +416,26 @@ body {
   z-index: 999;
 }
 
+.cart-details {
+  margin-top: 10px;
+  display: none;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.delete-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
