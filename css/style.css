@@ -73,7 +73,7 @@ nav a {
 
 .hero {
   height: 90vh;
-  background: linear-gradient(to left, #000, #333);
+  background: transparent;
   color: #fff;
   display: flex;
   flex-direction: column;
