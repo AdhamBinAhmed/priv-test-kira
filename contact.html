@@ -13,23 +13,35 @@
 <header>
   
 
+<header class="main-header">
+
+  <!-- اللوجو -->
   <div class="logo">
   <a href="index.html">
   <img src="images/logo.png" class="logo">
 </a>
   </div>
-  <nav>
+
+  <!-- زرار المينيو -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- القائمة -->
+  <nav id="menu">
     <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
-    <a href="products.html">منتاجاتنا</a>
+    <a href="products.html">منتجاتنا</a>
     <a href="gallery.html">أعمالنا</a>
     <a href="contact.html">تواصل معنا</a>
-    <button id="themeToggle" class="theme-btn">🌙</button>
-    <div class="cart-icon" onclick="toggleCart()">
-  🛒 <span id="cart-count">0</span>
-</div>
-
   </nav>
+
+  <div class="header-tools">
+
+  <!-- زرار الوضع -->
+  <button id="themeToggle">🌙</button>
+
+</div>
 </header>
 
 
