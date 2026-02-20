@@ -18,7 +18,7 @@
     <img src="images/logo.png" alt="Logo">
   </div>
 
-<button onclick="loginWithGoogle()" class="btn">
+<button id="loginBtn" class="btn">
   تسجيل بجوجل
 </button>
 
@@ -94,12 +94,12 @@
 </div>
 <script type="module">
 
-// استيراد Firebase
+// ===== Firebase =====
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// إعداداتك
+// ===== إعدادات =====
 const firebaseConfig = {
   apiKey: "AIzaSyAg81TG47I0VgdfuZgyxFJde2f527PE6DA",
   authDomain: "kira-4c722.firebaseapp.com",
@@ -110,13 +110,13 @@ const firebaseConfig = {
   measurementId: "G-WT8BN01H5D"
 };
 
-// تشغيل Firebase
+// ===== تشغيل Firebase =====
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
-// تسجيل بجوجل
+// ===== تسجيل الدخول =====
 window.loginWithGoogle = function() {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -135,7 +135,41 @@ window.loginWithGoogle = function() {
       }
     })
     .catch((error) => {
-      console.log(error);
+      alert(error.message);
+    });
+}
+
+// ===== متابعة حالة المستخدم =====
+onAuthStateChanged(auth, (user) => {
+  const btn = document.getElementById("loginBtn");
+
+  if (user) {
+    console.log("مستخدم:", user);
+
+    // تغيير الزرار
+    btn.innerHTML = `
+      <img src="${user.photoURL}" style="width:25px;height:25px;border-radius:50%">
+      ${user.displayName}
+    `;
+
+    btn.onclick = logout;
+
+  } else {
+    console.log("مش مسجل");
+
+    btn.innerHTML = "تسجيل بجوجل";
+    btn.onclick = loginWithGoogle;
+  }
+});
+
+// ===== تسجيل الخروج =====
+window.logout = function() {
+  signOut(auth)
+    .then(() => {
+      alert("تم تسجيل الخروج");
+    })
+    .catch((error) => {
+      alert(error.message);
     });
 }
 
