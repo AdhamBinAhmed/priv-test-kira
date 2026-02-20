@@ -98,7 +98,7 @@
 // ===== Firebase =====
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // ===== إعدادات =====
 const firebaseConfig = {
@@ -123,17 +123,10 @@ window.loginWithGoogle = function() {
     .then((result) => {
       const user = result.user;
 
-      let phone = prompt("اكتب رقم التليفون");
+      console.log("تم تسجيل الدخول:", user);
 
-      if (phone) {
-        setDoc(doc(db, "users", user.uid), {
-          name: user.displayName,
-          email: user.email,
-          phone: phone
-        });
-
-        alert("تم تسجيل الدخول");
-      }
+      // تحويل لصفحة البيانات
+      window.location.href = "profile.html";
     })
     .catch((error) => {
       alert(error.message);
@@ -144,10 +137,11 @@ window.loginWithGoogle = function() {
 onAuthStateChanged(auth, (user) => {
   const btn = document.getElementById("loginBtn");
 
+  if (!btn) return; // علشان لو الصفحة مفيهاش زرار
+
   if (user) {
     console.log("مستخدم:", user);
 
-    // تغيير الزرار
     btn.innerHTML = `
       <img src="${user.photoURL}" style="width:25px;height:25px;border-radius:50%">
       ${user.displayName}
@@ -168,6 +162,7 @@ window.logout = function() {
   signOut(auth)
     .then(() => {
       alert("تم تسجيل الخروج");
+      location.reload();
     })
     .catch((error) => {
       alert(error.message);
