@@ -75,6 +75,10 @@ accBtns.forEach(btn => {
 });
 let cart = [];
 
+function getCartKey() {
+  return "cart_" + currentUser;
+}
+
 function addToCart(name, price) {
   cart.push({ name, price });
   updateCart();
