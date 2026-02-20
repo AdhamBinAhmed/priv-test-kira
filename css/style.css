@@ -473,3 +473,33 @@ body {
   }
 }
 
+.profile-container {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 30px;
+  background: #1e1e1e;
+  border-radius: 15px;
+}
+
+.profile-container h2 {
+  margin-bottom: 20px;
+}
+
+.profile-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn {
+  background: #2d7df6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
