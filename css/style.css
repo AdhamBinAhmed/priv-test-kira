@@ -286,13 +286,15 @@ footer {
   }
 }
 
-/* زرار المنيو */
 .menu-toggle {
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
+  display: block !important;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  color: red;
+  z-index: 999999;
 }
-
 /* القائمة */
 .side-menu {
   position: fixed;
