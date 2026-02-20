@@ -135,3 +135,16 @@ function removeItem(index) {
   showDetails();
 }
 
+let currentUser = localStorage.getItem("user") || null;
+
+function login() {
+  const name = prompt("اكتب اسمك:");
+
+  if (name) {
+    currentUser = name;
+    localStorage.setItem("user", name);
+    alert("تم تسجيل الدخول يا " + name);
+    loadCart();
+  }
+}
+
