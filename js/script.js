@@ -76,7 +76,7 @@ accBtns.forEach(btn => {
 let cart = [];
 
 function addToCart(name, price) {
-  cart.push({name, price});
+  cart.push({ name, price });
   updateCart();
 }
 
@@ -86,15 +86,52 @@ function updateCart() {
 
   cartItems.innerHTML = "";
 
-  cart.forEach(item => {
-    cartItems.innerHTML += `<p>${item.name} - ${item.price} جنيه</p>`;
-  });
+  if (cart.length > 0) {
+    const lastItem = cart[cart.length - 1];
+    cartItems.innerHTML = `<p>${lastItem.name} - ${lastItem.price} جنيه</p>`;
+  }
 
   cartCount.textContent = cart.length;
 }
 
+// فتح وإغلاق الكارت
 function toggleCart() {
   const box = document.getElementById("cartBox");
   box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+// عرض التفاصيل
+function toggleDetails() {
+  const details = document.getElementById("cart-details");
+
+  if (details.style.display === "block") {
+    details.style.display = "none";
+  } else {
+    showDetails();
+    details.style.display = "block";
+  }
+}
+
+// عرض كل المنتجات
+function showDetails() {
+  const details = document.getElementById("cart-details");
+
+  details.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    details.innerHTML += `
+      <div class="cart-item">
+        <span>${item.name} - ${item.price} جنيه</span>
+        <button class="delete-btn" onclick="removeItem(${index})">حذف</button>
+      </div>
+    `;
+  });
+}
+
+// حذف منتج
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+  showDetails();
 }
 
