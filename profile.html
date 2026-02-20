@@ -3,8 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>بياناتك</title>
-  <link rel="stylesheet" href="style.css">
 </head>
+  <style>
+    /* ===== خلفية الصفحة ===== */
+.profile-page {
+  background: linear-gradient(135deg, #111, #222);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* ===== البوكس ===== */
+.profile-box {
+  background: #1e1e1e;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  animation: fadeIn 0.6s ease;
+}
+
+/* عنوان */
+.profile-box h2 {
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* input */
+.profile-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #2c2c2c;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* عند التركيز */
+.profile-box input:focus {
+  border: 1px solid #2d7df6;
+}
+
+/* الزرار */
+.profile-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2d7df6;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-box button:hover {
+  background: #1b5ed9;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+  
 
 <body class="profile-page">
 
@@ -19,3 +95,4 @@
 
 </body>
 </html>
+
