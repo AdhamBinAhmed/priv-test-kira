@@ -9,6 +9,17 @@ body {
   background: #fff;
   color: #333;
   overflow-x: hidden;
+   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 .main-header {
   display: flex;
