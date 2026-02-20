@@ -72,15 +72,6 @@ nav a {
     display: flex;
   }
 
-  .nav-links {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background: #000;
-  width: 100%;
-  z-index: 2000;
-}
-
 .hero {
   height: 90vh;
   background: transparent;
