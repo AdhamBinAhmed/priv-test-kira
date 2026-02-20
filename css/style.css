@@ -95,10 +95,6 @@ nav a {
   text-align: center;
 }
 
-.gray {
-  background: #f4f4f4;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -384,6 +380,7 @@ body.loaded {
 .section {
   padding: 80px 50px;
   text-align: center;
+  background: transparent;
 }
 @media (max-width: 768px) {
   .section {
@@ -588,4 +585,9 @@ body.loaded {
     opacity: 1;
     transform: translateY(0);
   }
+}
+section {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
 }
