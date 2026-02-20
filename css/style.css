@@ -72,11 +72,14 @@ background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
 }
 /* زرار ☰ */
 .menu-toggle {
-  font-size: 25px;
-  cursor: pointer;
   display: none;
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
 
 header img {
   height: 50px;
