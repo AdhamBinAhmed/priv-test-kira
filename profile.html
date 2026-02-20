@@ -67,6 +67,15 @@
 .profile-box button:hover {
   background: #1b5ed9;
 }
+    .profile-box select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #2c2c2c;
+  color: #fff;
+}
 
 /* animation */
 @keyframes fadeIn {
@@ -88,11 +97,29 @@
   <h2>أكمل بياناتك</h2>
 
   <input type="text" id="phone" placeholder="📞 رقم التليفون">
-  <input type="text" id="address" placeholder="📍 العنوان">
+
+  <!-- المحافظة -->
+  <select id="governorate">
+    <option value="">اختر المحافظة</option>
+    <option value="cairo">القاهرة</option>
+    <option value="giza">الجيزة</option>
+  </select>
+
+  <!-- المنطقة -->
+  <select id="area">
+    <option value="">اختر المنطقة</option>
+  </select>
+
+  <!-- الشارع -->
+  <input type="text" id="street" placeholder="اسم الشارع">
+
+  <!-- العمارة -->
+  <input type="text" id="building" placeholder="رقم العمارة">
 
   <button onclick="saveUserData()">حفظ البيانات</button>
 </div>
-
+<script type="module" src="js/profile.js"></script>
 </body>
 </html>
+
 
