@@ -82,7 +82,7 @@ body {
 .cart-box {
   position: absolute;
   top: 70px;
-  left: 20px;
+  left: 10px;
   background: #fff;
   color: #000;
   padding: 15px;
@@ -338,4 +338,7 @@ footer {
   font-size: 40px;
   cursor: pointer;
   color: #fff;
+}
+.cart-icon {
+  margin-left: 15px; 
 }
