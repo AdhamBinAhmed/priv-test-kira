@@ -323,6 +323,30 @@ function hideLoader() {
       loader.style.display = "none";
     }, 500);
   }
+  // ===== Lightbox =====
+const images = document.querySelectorAll(".gallery img, .our-work img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("closeBtn");
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+// قفل
+closeBtn.onclick = () => {
+  lightbox.style.display = "none";
+};
+
+// قفل لما تدوس بره الصورة
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+};
 }
 
 document.addEventListener("DOMContentLoaded", hideLoader);
