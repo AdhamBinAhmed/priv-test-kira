@@ -468,3 +468,8 @@ body {
   color: #fff;
   cursor: pointer;
 }
+#lightbox img {
+  opacity: 1 !important;
+  filter: none !important;
+  background: transparent !important;
+}
