@@ -308,7 +308,7 @@ function hideLoader() {
 
   if (loader) {
     loader.style.opacity = "0";
-    loader.style.transition = "0.4s";
+    loader.style.transition = "1.14s";
 
     setTimeout(() => {
       loader.style.display = "none";
