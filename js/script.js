@@ -312,16 +312,18 @@ document.querySelectorAll("a").forEach(link => {
   });
 });
 
-// Loader
-window.addEventListener("load", () => {
+function hideLoader() {
   const loader = document.getElementById("loader");
+  if (!loader) return;
 
+  loader.style.opacity = "0";
   setTimeout(() => {
-    loader.style.opacity = "0";
+    loader.style.display = "none";
+  }, 500);
+}
 
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
+// يشتغل أول ما HTML يفتح
+document.addEventListener("DOMContentLoaded", hideLoader);
 
-  }, 700); // وقت التحميل (تقدر تقلله)
-});
+// backup لو اتأخر
+setTimeout(hideLoader, 3000);
