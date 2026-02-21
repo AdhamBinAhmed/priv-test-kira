@@ -32,17 +32,6 @@ document.querySelectorAll("a").forEach(link => {
 
 const toggleBtn = document.getElementById("themeToggle");
 
-// تحميل الوضع المحفوظ
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  toggleBtn.textContent = "☀️";
-}
-
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-});
-
-
 // Accordion
 const accBtns = document.querySelectorAll(".accordion-btn");
 
