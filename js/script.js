@@ -141,5 +141,9 @@ function removeItem(index) {
 
 let currentUser = localStorage.getItem("user") || null;
 
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.classList.toggle("active");
+}
 
 
