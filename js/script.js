@@ -312,18 +312,19 @@ document.querySelectorAll("a").forEach(link => {
   });
 });
 
-function hideLoader() {
+// ===== Loader (1.5 ثانية ثابتة) =====
+document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   if (!loader) return;
 
-  loader.style.opacity = "0";
+  // بعد 1.5 ثانية
   setTimeout(() => {
-    loader.style.display = "none";
-  }, 500);
-}
+    loader.style.opacity = "0";
 
-// يشتغل أول ما HTML يفتح
-document.addEventListener("DOMContentLoaded", hideLoader);
+    // نخفيه بعد الفيد
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 400);
 
-// backup لو اتأخر
-setTimeout(hideLoader, 700);
+  }, 1500);
+});
