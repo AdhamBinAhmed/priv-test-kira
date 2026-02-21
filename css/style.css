@@ -425,8 +425,15 @@ footer {
 .contact-form .btn:hover {
   background: #1b5fd1;
 }
-.our-work img {
+/* ===== Fix الصور في اعمالنا ===== */
+
+.our-work img,
+.gallery img {
   opacity: 1 !important;
   filter: none !important;
 }
-
+body {
+  background: url("../images/bg.jpeg") !important;
+  background-size: cover;
+  background-position: center;
+}
