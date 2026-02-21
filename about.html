@@ -9,36 +9,62 @@
 </head>
 <body>
 
-
 <header class="main-header">
+
+  
 
   <!-- اللوجو -->
   <div class="logo">
     <img src="images/logo.png" alt="Logo">
   </div>
 
-  <!-- زرار المينيو -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    ☰
+
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="side-menu" id="sideMenu">
+
+  <span class="close-btn" onclick="toggleMenu()">×</span>
+
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="products.html">منتجاتنا</a>
+  <a href="gallery.html">أعمالنا</a>
+  <a href="contact.html">تواصل معنا</a>
+
+  <!-- زرار تسجيل الدخول -->
+  <div class="menu-login">
+    <button id="loginBtn" class="btn">
+      تسجيل بجوجل
+    </button>
   </div>
 
-  <!-- القائمة -->
-  <nav id="menu">
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="products.html">منتجاتنا</a>
-    <a href="gallery.html">أعمالنا</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
+</div>
+  
 
-  <!-- أدوات -->
-  <div class="header-tools">
-    <button id="themeToggle">🌙</button>
-    <div class="cart-icon" onclick="toggleCart()">
-      🛒 <span id="cart-count">0</span>
-    </div>
+ <div class="header-tools">
+
+  <!-- زرار السلة -->
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
   </div>
 
+</div>
+
+<!-- الكارت (خليه بره الهيدر) -->
+<div class="cart-box" id="cartBox">
+
+  <h3>سلة المشتريات</h3>
+
+  <div id="cart-items"></div>
+
+  <button onclick="toggleDetails()" class="btn">
+    تفاصيل
+  </button>
+
+  <div id="cart-details" class="cart-details"></div>
+
+</div>
 </header>
 
 
