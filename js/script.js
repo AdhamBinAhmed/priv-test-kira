@@ -1,64 +1,83 @@
 function scrollToContact() {
-  document.getElementById("contact").scrollIntoView({
-    behavior: "smooth"
-  });
+  const el = document.getElementById("contact");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
-// Fade In عند تحميل الصفحة
+// Fade In
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
+
 function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("active");
+  const menu = document.getElementById("sideMenu") || document.getElementById("menu");
+  if (menu) menu.classList.toggle("active");
 }
 
-// Fade Out عند الانتقال
+// ===============================
+// SAFE LINKS (FIX ERROR)
+// ===============================
 document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function (e) {
-    if (this.href.includes("#")) return;
+  if (link) {
+    link.addEventListener("click", function (e) {
 
-    e.preventDefault();
-    const target = this.href;
+      if (!this.href || this.href.includes("#")) return;
 
-    document.body.classList.remove("loaded");
-    document.body.classList.add("fade-out");
+      e.preventDefault();
+      const target = this.href;
 
-    setTimeout(() => {
-      window.location.href = target;
-    }, 400);
-  });
+      document.body.classList.remove("loaded");
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = target;
+      }, 400);
+    });
+  }
 });
 
+// ===============================
+// THEME BUTTON FIX
+// ===============================
 const toggleBtn = document.getElementById("themeToggle");
 
-// Accordion
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+}
+
+// ===============================
+// ACCORDION FIX
+// ===============================
 const accBtns = document.querySelectorAll(".accordion-btn");
 
 accBtns.forEach(btn => {
-  btn.addEventListener("click", function () {
+  if (btn) {
+    btn.addEventListener("click", function () {
 
-    const content = this.nextElementSibling;
+      const content = this.nextElementSibling;
+      if (!content) return;
 
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
 
-      // يقفل أي قائمة مفتوحة
-      document.querySelectorAll(".accordion-content").forEach(item => {
-        item.style.maxHeight = null;
-      });
+        document.querySelectorAll(".accordion-content").forEach(item => {
+          item.style.maxHeight = null;
+        });
 
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-
-  });
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
 });
-let cart = [];
 
-function getCartKey() {
-  return "cart_" + currentUser;
-}
+// ===============================
+// CART SYSTEM
+// ===============================
+let cart = [];
 
 function addToCart(name, price) {
   cart.push({ name, price });
@@ -68,6 +87,8 @@ function addToCart(name, price) {
 function updateCart() {
   const cartItems = document.getElementById("cart-items");
   const cartCount = document.getElementById("cart-count");
+
+  if (!cartItems || !cartCount) return;
 
   cartItems.innerHTML = "";
 
@@ -79,15 +100,16 @@ function updateCart() {
   cartCount.textContent = cart.length;
 }
 
-// فتح وإغلاق الكارت
 function toggleCart() {
   const box = document.getElementById("cartBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
+  if (box) {
+    box.style.display = box.style.display === "block" ? "none" : "block";
+  }
 }
 
-// عرض التفاصيل
 function toggleDetails() {
   const details = document.getElementById("cart-details");
+  if (!details) return;
 
   if (details.style.display === "block") {
     details.style.display = "none";
@@ -97,9 +119,9 @@ function toggleDetails() {
   }
 }
 
-// عرض كل المنتجات
 function showDetails() {
   const details = document.getElementById("cart-details");
+  if (!details) return;
 
   details.innerHTML = "";
 
@@ -113,36 +135,29 @@ function showDetails() {
   });
 }
 
-// حذف منتج
 function removeItem(index) {
   cart.splice(index, 1);
   updateCart();
   showDetails();
 }
 
+// ===============================
+// USER
+// ===============================
 let currentUser = localStorage.getItem("user") || null;
 
-function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  menu.classList.toggle("active");
-}
-
 // ===============================
-// تحميل الصفحة
+// LOAD + ANIMATION
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== عناصر الانيميشن =====
   const elements = document.querySelectorAll(".animate");
   const cards = document.querySelectorAll(".product-card");
   const images = document.querySelectorAll("img");
   const buttons = document.querySelectorAll(".btn");
   const header = document.querySelector(".main-header");
 
-
-  // ===============================
-  // Fade + Slide Animation
-  // ===============================
+  // Fade animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -153,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
 
   elements.forEach(el => observer.observe(el));
-
 
   function animateElement(el) {
     let y = 50;
@@ -173,11 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 16);
   }
 
-
-  // ===============================
-  // Image Zoom Animation
-  // ===============================
+  // Image animation
   images.forEach(img => {
+    if (!img) return;
+
     img.style.transform = "scale(0.8)";
     img.style.opacity = "0";
 
@@ -203,11 +216,10 @@ document.addEventListener("DOMContentLoaded", () => {
     obs.observe(img);
   });
 
-
-  // ===============================
-  // Button Bounce Animation
-  // ===============================
+  // Buttons animation
   buttons.forEach(btn => {
+    if (!btn) return;
+
     btn.addEventListener("mouseenter", () => {
       let scale = 1;
 
@@ -229,11 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-  // ===============================
-  // Cards Slide Animation
-  // ===============================
+  // Cards animation
   cards.forEach((card, index) => {
+    if (!card) return;
+
     card.style.opacity = "0";
 
     const obs = new IntersectionObserver(entries => {
@@ -259,26 +270,21 @@ document.addEventListener("DOMContentLoaded", () => {
     obs.observe(card);
   });
 
-
-  // ===============================
-  // Navbar Animation on Scroll
-  // ===============================
+  // Navbar scroll
   window.addEventListener("scroll", () => {
-    let scroll = window.scrollY;
-
     if (header) {
-      header.style.transform = `translateY(${Math.min(scroll, 50)}px)`;
+      header.style.transform = `translateY(${Math.min(window.scrollY, 50)}px)`;
     }
   });
 
 });
 
-
 // ===============================
-// Menu Toggle
+// MENU FIX (FINAL)
 // ===============================
 window.toggleMenu = function () {
   const menu = document.getElementById("sideMenu");
+  if (!menu) return;
 
   if (menu.style.left === "0px") {
     menu.style.left = "-100%";
@@ -287,37 +293,37 @@ window.toggleMenu = function () {
   }
 };
 
-
-// Smooth Scroll (اختياري)
+// ===============================
+// SMOOTH SCROLL FIX
 // ===============================
 document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", function(e) {
-    if (this.hash !== "") {
-      e.preventDefault();
-      document.querySelector(this.hash)?.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
+  if (link) {
+    link.addEventListener("click", function(e) {
+      if (this.hash !== "") {
+        e.preventDefault();
+        document.querySelector(this.hash)?.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  }
 });
 
-// ===== Loader FINAL FIX =====
-
+// ===============================
+// LOADER FIX FINAL
+// ===============================
 function hideLoader() {
   const loader = document.getElementById("loader");
 
   if (loader) {
     loader.style.opacity = "0";
-    loader.style.transition = "1.14s";
+    loader.style.transition = "1s";
 
     setTimeout(() => {
       loader.style.display = "none";
-    }, 750);
+    }, 500);
   }
 }
 
-// يشتغل أول ما الصفحة تفتح
 document.addEventListener("DOMContentLoaded", hideLoader);
-
-// backup لو في error
 setTimeout(hideLoader, 1500);
