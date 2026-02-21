@@ -312,7 +312,7 @@ function hideLoader() {
 
     setTimeout(() => {
       loader.style.display = "none";
-    }, 400);
+    }, 750);
   }
 }
 
