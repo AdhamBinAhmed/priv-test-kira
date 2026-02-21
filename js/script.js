@@ -326,4 +326,4 @@ function hideLoader() {
 document.addEventListener("DOMContentLoaded", hideLoader);
 
 // backup لو اتأخر
-setTimeout(hideLoader, 3000);
+setTimeout(hideLoader, 700);
