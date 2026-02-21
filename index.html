@@ -163,14 +163,16 @@ window.logout = function() {
     .then(() => {
       alert("تم تسجيل الخروج");
       location.reload();
-    })
+    }
     .catch((error) => {
       alert(error.message);
     });
 }
 
+
 function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle("active");
+  var menu = document.getElementById("sideMenu");
+  menu.classList.toggle("active");
 }
 
 </script>
