@@ -298,7 +298,7 @@ window.toggleMenu = function () {
   }
 };
 
-==
+
 // Smooth Scroll (اختياري)
 // ===============================
 document.querySelectorAll("a").forEach(link => {
@@ -312,19 +312,23 @@ document.querySelectorAll("a").forEach(link => {
   });
 });
 
-// ===== Loader (1.5 ثانية ثابتة) =====
-document.addEventListener("DOMContentLoaded", () => {
+// ===== Loader FINAL FIX =====
+
+function hideLoader() {
   const loader = document.getElementById("loader");
-  if (!loader) return;
 
-  // بعد 1.5 ثانية
-  setTimeout(() => {
+  if (loader) {
     loader.style.opacity = "0";
+    loader.style.transition = "0.4s";
 
-    // نخفيه بعد الفيد
     setTimeout(() => {
       loader.style.display = "none";
     }, 400);
+  }
+}
 
-  }, 1500);
-});
+// يشتغل أول ما الصفحة تفتح
+document.addEventListener("DOMContentLoaded", hideLoader);
+
+// backup لو في error
+setTimeout(hideLoader, 1500);
