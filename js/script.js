@@ -298,8 +298,7 @@ window.toggleMenu = function () {
   }
 };
 
-
-// ===============================
+==
 // Smooth Scroll (اختياري)
 // ===============================
 document.querySelectorAll("a").forEach(link => {
